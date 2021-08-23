@@ -1,5 +1,6 @@
 package com.example.studentservice;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -11,7 +12,7 @@ public class StudentService {
         this.studentRepository = studentRepository;
     }
 
-
+    @Cacheable("students")
     public Student getStudentById(Long id) {
         return studentRepository.findById(id).orElse(null);
     }
