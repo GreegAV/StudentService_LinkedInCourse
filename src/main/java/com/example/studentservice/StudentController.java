@@ -1,9 +1,8 @@
 package com.example.studentservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class StudentController {
@@ -19,4 +18,10 @@ public class StudentController {
     Student getStudent(@PathVariable Long id){
         return studentService.getStudentById(id);
     }
+
+//    @ExceptionHandler
+//    @ResponseStatus(HttpStatus.NOT_FOUND)
+//    void studentNotFoundException(StudentNotFoundException e){
+//
+//    }
 }

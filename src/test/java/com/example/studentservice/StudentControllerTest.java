@@ -37,11 +37,23 @@ public class StudentControllerTest {
             .andExpect(jsonPath("name").value("Mark"))
             .andExpect(jsonPath("grade").value(10));
 
-
         //then
-
 
     }
 
 
+    @Test
+    void getStudent_forMissingStudent_status404() throws Exception {
+        //given
+        given(studentService.getStudentById(anyLong())).willThrow(StudentNotFoundException.class);
+
+        //when
+        mockMvc.perform(get("/students/1"))
+            .andExpect(status().isNotFound());
+
+        //then
+
+
+
+    }
 }
