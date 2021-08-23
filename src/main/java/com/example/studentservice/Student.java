@@ -29,6 +29,12 @@ public class Student {
         this.grade = grade;
     }
 
+    public Student(Long id, String name, int grade) {
+        this.id = id;
+        this.name = name;
+        this.active = active;
+    }
+
     public boolean isActive() {
         return active;
     }
