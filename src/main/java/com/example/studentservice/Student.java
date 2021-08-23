@@ -32,7 +32,7 @@ public class Student {
     public Student(Long id, String name, int grade) {
         this.id = id;
         this.name = name;
-        this.active = active;
+        this.grade = grade;
     }
 
     public boolean isActive() {
